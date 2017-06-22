@@ -1,0 +1,8 @@
+prefix=/home/martin/catkin_ws/devel
+
+Name: path_generator
+Description: Description of path_generator
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/martin/catkin_ws/devel/lib 
+Requires: 

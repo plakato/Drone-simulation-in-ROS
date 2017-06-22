@@ -1,0 +1,8 @@
+prefix=/home/martin/catkin_ws/install
+
+Name: actor_critic_agent
+Description: Description of actor_critic_agent
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/martin/catkin_ws/install/lib 
+Requires: 

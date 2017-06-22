@@ -1,0 +1,8 @@
+prefix=/home/martin/catkin_ws/devel
+
+Name: ardrone_vislab_description
+Description: Description of ardrone_vislab_description
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/martin/catkin_ws/devel/lib 
+Requires: 

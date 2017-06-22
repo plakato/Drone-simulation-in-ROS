@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="ardrone_joystick" type="ardrone_teleop" name="ardrone_joystick" output="screen">
+    </node>
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/martin/catkin_ws/devel
+
+Name: opticalflow_controller
+Description: Description of opticalflow_controller
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/martin/catkin_ws/devel/lib 
+Requires: 

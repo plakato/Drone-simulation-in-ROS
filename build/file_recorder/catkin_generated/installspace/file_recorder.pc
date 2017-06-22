@@ -1,0 +1,8 @@
+prefix=/home/martin/catkin_ws/install
+
+Name: file_recorder
+Description: Description of file_recorder
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/martin/catkin_ws/install/lib 
+Requires: 
