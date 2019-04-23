@@ -1,0 +1,60 @@
+# install ros kinetic on ubuntu xenial 16.04
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+
+sudo apt-get update
+sudo apt-get install ros-kinetic-desktop-full
+sudo rosdep init
+rosdep update
+echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+sudo apt-get install python-rosinstall
+
+source /opt/ros/kinetic/setup.bash
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws
+catkin_make
+source devel/setup.bash
+echo $ROS_PACKAGE_PATH 		# output should be: /home/youruser/catkin_ws/src:/opt/ros/kinetic/share
+
+# ARDRONE AUTONOMY INSTALL
+sudo apt-get install ros-kinetic-ardrone-autonomy
+source /opt/ros/kinetic/setup.bash
+
+# joy_node and ardrone_joystick
+cd ~/catkin_ws/devel
+svn checkout https://svncvpr.informatik.tu-muenchen.de/cvpr-ros-pkg/trunk/ardrone_helpers
+# add to ros path (if required)
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:`pwd`/ardrone_helpers
+rosmake ardrone_joystick
+rosmake joy
+
+# TUM SIMULATOR
+# cd into ros root dir
+roscd
+
+# clone repository
+sudo git clone https://github.com/tum-vision/tum_simulator.git
+
+# add to ros path (if required)
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:`pwd`/tum_simulator
+
+# build package
+rosmake cvg_sim_gazebo_plugins
+rosmake message_to_tf
+
+# Add hector quadrotor
+mkdir ~/hector_quadrotor_tutorial
+cd ~/hector_quadrotor_tutorial
+wstool init src https://raw.github.com/tu-darmstadt-ros-pkg/hector_quadrotor/kinetic-devel/tutorials.rosinstall
+
+# Try
+catkin_make
+
+# if it doesnt go well, fix missing packages and try catkin_make again
+sudo apt-get install ros-kinetic-geographic-info
+sudo apt-get install ros-kinetic-ros-control
+sudo apt-get install ros-kinetic-gazebo-ros-control
+# RUN
+roslaunch cvg_sim_gazebo ardrone_testworld.launch

@@ -1,8 +1,0 @@
-prefix=/home/martin/catkin_ws/install
-
-Name: a3c
-Description: Description of a3c
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/martin/catkin_ws/install/lib 
-Requires: 

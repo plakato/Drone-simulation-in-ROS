@@ -1,8 +1,0 @@
-prefix=/home/martin/catkin_ws/devel
-
-Name: ardrone_joystick
-Description: Description of ardrone_joystick
-Version: 1.0.0
-Cflags: 
-Libs: -L/home/martin/catkin_ws/devel/lib 
-Requires: 

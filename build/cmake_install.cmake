@@ -117,12 +117,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/patricia/catkin_ws/build/gtest/cmake_install.cmake")
-  include("/home/patricia/catkin_ws/build/cvg_sim_msgs/cmake_install.cmake")
-  include("/home/patricia/catkin_ws/build/tum_simulator/cmake_install.cmake")
-  include("/home/patricia/catkin_ws/build/beginner_tutorials/cmake_install.cmake")
-  include("/home/patricia/catkin_ws/build/cvg_sim_gazebo/cmake_install.cmake")
-  include("/home/patricia/catkin_ws/build/cvg_sim_gazebo_plugins/cmake_install.cmake")
-  include("/home/patricia/catkin_ws/build/message_to_tf/cmake_install.cmake")
 
 endif()
 
